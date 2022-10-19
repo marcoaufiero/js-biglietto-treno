@@ -1,6 +1,8 @@
-let km = prompt("inserisci i chilometri da percorrere");
+function displayPrice(){
 
-let userAge = prompt("inserisci la tua età");
+let km = document.getElementById("inputKm").value;
+
+let userAge = document.getElementById("inputAge").value;
 
 const priceKm = 0.21;
 
@@ -18,9 +20,18 @@ if(userAge < 18){
     ticketDiscount = 0;
 }
 
-let ticketDiscountAlert = parseFloat(ticketDiscount).toFixed(2)
+let ticketDiscountAlert = parseFloat(ticketDiscount).toFixed(2);
 
 let finalPrice = parseFloat(ticketPrice - ticketDiscount).toFixed(2);
 
+if(ticketDiscount !== 0){
 
-console.log(ticketPrice, ticketDiscountAlert, finalPrice)
+    document.getElementById('ticketDiscountDisplay').innerHTML = `E' stato applicato uno sconto di € ${ticketDiscountAlert}`;
+}
+
+document.getElementById('finalPriceDisplay').innerHTML = `Il prezzo del biglietto è € ${finalPrice}`;
+
+console.log(ticketPrice, ticketDiscountAlert, finalPrice);
+
+}
+
