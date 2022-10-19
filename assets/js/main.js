@@ -6,7 +6,7 @@ const priceKm = 0.21;
 
 let ticketPrice = km * priceKm;
 
-let ticketDiscount;
+let ticketDiscount = parseFloat().toFixed(2);
 
 if(userAge < 18){
     ticketDiscount = (ticketPrice / 100) * 20;
@@ -18,7 +18,7 @@ if(userAge < 18){
     ticketDiscount = 0;
 }
 
-let finalPrice = ticketPrice - ticketDiscount;
+let finalPrice = parseFloat(ticketPrice - ticketDiscount).toFixed(2);
 
 
 console.log(ticketPrice, ticketDiscount, finalPrice)
